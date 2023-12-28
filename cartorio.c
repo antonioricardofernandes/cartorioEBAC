@@ -3,6 +3,10 @@
 #include <locale.h> //biblioteca de alocações de texto por região
 #include <string.h> //
 
+int novocpf;
+int novaconsulta;
+int novodelete;
+
 int registra()
 {
 	//criação das variaveis
@@ -55,8 +59,35 @@ int registra()
 	fprintf (arq, cargo);
 	fclose (arq);
 	
-	system("pause");
+	system("cls");
 	
+	printf("\nDeseja cadastrar um novo usuário?\n\n\n");
+	
+	printf(" Escolha a opção desejada no menu abaixo: \n\n");
+	printf("\t1 - Registrar novo aluno\n");
+	printf("\t2 - Voltar ao Menu Principal\n");
+	scanf("%d", &novocpf);
+	
+	switch(novocpf)
+{
+	case 1: 
+	system("cls");
+	registra();
+	break;
+	case 2: 
+	system("cls");
+	printf("Retornando ao menu principal.\n");
+	system("pause");
+	break;
+	
+	default:
+		system("cls");
+		printf("Opção inválida.\n");
+		system("pause");
+	break;
+}	
+	
+
 }
 
 int consulta()
@@ -76,7 +107,7 @@ int consulta()
 	
 	if(arq == NULL)
 	{
-		printf("CPF não localizado, verifique o número informado e tente novamente!\n");
+		printf("CPF não localizado, verifique o número informado e tente novamente!\n\n");
 	}	
 	
 	while(fgets(conteudo, 200, arq) != NULL)	
@@ -87,6 +118,35 @@ int consulta()
 	}
 	
 	system("pause");
+	system("cls");
+	
+	printf("\nDeseja consultar um novo usuário?\n\n\n");
+	
+	printf(" Escolha a opção desejada no menu abaixo: \n\n");
+	printf("\t1 - Consultar novo aluno\n");
+	printf("\t2 - Voltar ao Menu Principal\n");
+	scanf("%d", &novaconsulta);
+	
+	switch(novaconsulta)
+{
+	case 1: 
+	system("cls");
+	consulta();
+	break;
+	
+	case 2:
+	system("cls");
+	printf("Retornando para o menu principal.\n");
+	system("pause");
+	break; 
+	
+	default:
+		system("cls");
+		printf("Opção inválida, retornando ao menu principal.\n");
+		system("pause");	
+	break;
+}	
+	
 }
 
 int deleta()
@@ -109,8 +169,33 @@ int deleta()
 	remove(cpf); 	
 	printf("Usuário deletado com sucesso! \n\n");	
 	}
-			
-	 	system("pause");		
+		system("cls");
+	 		printf("\nDeseja consultar um novo usuário?\n\n\n");
+	
+	printf(" Escolha a opção desejada no menu abaixo: \n\n");
+	printf("\t1 - Deletar novo aluno\n");
+	printf("\t2 - Voltar ao Menu Principal\n");
+	scanf("%d", &novodelete);
+	
+	switch(novodelete)
+{
+	case 1: 
+	system("cls");
+	deleta();
+	break;
+	
+	case 2:
+	system("cls");
+	printf("Retornando para o menu principal.\n");
+	system("pause");
+	break;
+	
+	default:
+		system("cls");
+		printf("Opção inválida, retornando ao menu principal.\n");
+		system("pause");	
+	break;
+}			
 }
 
 
@@ -169,6 +254,4 @@ int main()
 }
 }
 }
-
-
 
