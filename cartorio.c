@@ -170,7 +170,7 @@ int deleta()
 	printf("Usuário deletado com sucesso! \n\n");	
 	}
 		system("cls");
-	 		printf("\nDeseja consultar um novo usuário?\n\n\n");
+	 		printf("\nDeseja deletar um novo usuário?\n\n\n");
 	
 	printf(" Escolha a opção desejada no menu abaixo: \n\n");
 	printf("\t1 - Deletar novo aluno\n");
